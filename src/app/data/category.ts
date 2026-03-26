@@ -1,4 +1,4 @@
 export interface Category {
-    id: String
-    name: String
+    id: String;
+    name: String;
 }
