@@ -1,5 +1,5 @@
 @if (posts$ | async; as posts) {
-@if (posts.legth) {
+@if (posts.length) {
 <h2>Blog Posts</h2>
 <ul>
     @for (post of posts; track $index) {

@@ -5,15 +5,20 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { TopBar } from './components/top-bar/top-bar';
 import { provideHttpClient } from '@angular/common/http';
-
+import { CommonModule } from '@angular/common';
+import { PostList } from './components/post-list/post-list';
+import { PostListItem } from './components/post-list-item/post-list-item';
 @NgModule({
   declarations: [
     App,
-    TopBar
+    TopBar,
+    PostList,
+    PostListItem
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

@@ -4,8 +4,8 @@ export interface Post {
     id: String;
     title: string;
     content: string;
-    createdDate: string;
-    Category: Category;
+    createdDate: Date;
+    category: Category;
 }
 
 export const POSTS: Post[] = [

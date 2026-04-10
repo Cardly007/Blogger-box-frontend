@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { Post } from '../../data/posts';
 
 @Component({
@@ -8,6 +8,6 @@ import { Post } from '../../data/posts';
   styleUrl: './post-list-item.css',
 })
 export class PostListItem {
-  @input() post!: Post;
+  @Input() post!: Post;
 
 }
