@@ -8,6 +8,12 @@ export interface Post {
     category: Category;
 }
 
+export interface PostCreateInput {
+    title: string;
+    content: string;
+    categoryId: String;
+}
+
 export const POSTS: Post[] = [
     {
         id: '1',

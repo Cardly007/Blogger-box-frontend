@@ -11,7 +11,7 @@ export interface CategoryCreateInput {
   providedIn: 'root',
 })
 export class CategoryService {
-  private categoriesUrl = `http://localhost:8080/v1/categories`;
+  private categoriesUrl = `http://localhost:8080/v1/categories/`;
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Category[]> {
@@ -29,5 +29,5 @@ export class CategoryService {
   delete(category: Category): Observable<boolean> {
     return this.http.delete<boolean>(`${this.categoriesUrl}/${category.id}`);
   }
-  
+
 }

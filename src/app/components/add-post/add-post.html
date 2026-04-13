@@ -1,0 +1,45 @@
+<div class="card mt-4">
+    <div class="card-body">
+        <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+
+            <div class="mb-3">
+                <label>Title:</label>
+                <input type="text" class="form-control" formControlName="title"
+                    [class.is-invalid]="title.invalid && title.touched" [class.is-valid]="title.valid && title.touched">
+                <div class="invalid-feedback" *ngIf="title.errors?.['required']">Title is required</div>
+                <div class="invalid-feedback" *ngIf="title.errors?.['minlength']">Title should be at least 5 characters
+                </div>
+                <div class="invalid-feedback" *ngIf="title.errors?.['maxlength']">Title should not exceed 150 characters
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label>Category:</label>
+
+                <select class="form-select" formControlName="categoryId"
+                    [class.is-invalid]="categoryId.invalid && categoryId.touched"
+                    [class.is-valid]="categoryId.valid && categoryId.touched">
+
+                    <option value="" disabled selected>Select a category</option>
+
+                    <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.name }}</option>
+
+                </select>
+                <div class="invalid-feedback" *ngIf="categoryId.errors?.['required']">Category is required</div>
+            </div>
+
+            <div class="mb-3">
+                <label>Content:</label>
+                <textarea class="form-control" rows="5" formControlName="content"
+                    [class.is-invalid]="content.invalid && content.touched"
+                    [class.is-valid]="content.valid && content.touched"></textarea>
+                <div class="invalid-feedback" *ngIf="content.errors?.['required']">Content is required</div>
+                <div class="invalid-feedback" *ngIf="content.errors?.['maxlength']">Post content should not exceed 2500
+                    characters</div>
+            </div>
+
+            <button type="submit" class="btn btn-success">Post message</button>
+            <button type="button" class="btn btn-outline-danger ms-2" routerLink="/">Close</button>
+        </form>
+    </div>
+</div>

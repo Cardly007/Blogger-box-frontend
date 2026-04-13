@@ -8,17 +8,29 @@ import { provideHttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { PostList } from './components/post-list/post-list';
 import { PostListItem } from './components/post-list-item/post-list-item';
+import { UserListComponent } from './components/user-list-component/user-list-component';
+import { UserDetailsComponent } from './components/user-details-component/user-details-component';
+// import { AppComponent } from './components/app-component/app-component';
+import { AddPostComponent } from './components/add-post/add-post';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     App,
     TopBar,
     PostList,
-    PostListItem
+    PostListItem,
+    UserListComponent,
+    UserDetailsComponent,
+    // AppComponent,
+    AddPostComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    ReactiveFormsModule,
+
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
